@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import json
 import os
+from pathlib import Path
 from typing import Any, Literal
 
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
 import drills
@@ -127,5 +128,34 @@ async def coach(req: CoachRequest) -> StreamingResponse:
     )
 
 
+def _frontend_dist() -> Path | None:
+    raw = os.getenv("FRONTEND_DIST", "").strip()
+    candidates = [
+        Path(raw) if raw else None,
+        Path(__file__).resolve().parent / "static",
+        Path(__file__).resolve().parent.parent / "frontend" / "dist",
+    ]
+    for path in candidates:
+        if path is not None and (path / "index.html").is_file():
+            return path
+    return None
+
+
+_DIST = _frontend_dist()
+if _DIST is not None:
+
+    @app.get("/")
+    def spa_index() -> FileResponse:
+        return FileResponse(_DIST / "index.html")
+
+    @app.get("/{full_path:path}")
+    def spa_assets(full_path: str) -> FileResponse:
+        target = (_DIST / full_path).resolve()
+        dist = _DIST.resolve()
+        if str(target).startswith(str(dist)) and target.is_file():
+            return FileResponse(target)
+        return FileResponse(_DIST / "index.html")
+
+
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=False)
+    uvicorn.run("server:app", host="0.0.0.0", port=int(os.getenv("PORT", "8000")), reload=False)

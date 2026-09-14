@@ -12,8 +12,10 @@ import { localCoach } from "./localCoach";
 import { drillById, drillsFor } from "../drills/catalog";
 import { localVerdict } from "../drills/score";
 
+// Unset → local uvicorn. Empty string → same origin (one-service live deploy).
+const _envApi = import.meta.env.VITE_API_BASE as string | undefined;
 const API_BASE =
-  (import.meta.env.VITE_API_BASE as string | undefined) ?? "http://localhost:8000";
+  _envApi === undefined ? "http://localhost:8000" : _envApi.replace(/\/$/, "");
 
 export function apiBase(): string {
   return API_BASE;
