@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="1100" height="680" role="img" aria-label="LetsSingAI architecture">
+  <rect width="1100" height="680" fill="#070b16"/>
+  <text x="40" y="42" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">LetsSingAI — session-conductor architecture</text>
+  <text x="40" y="66" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Client DSP is live and zero-LLM. The Strands orchestrator runs the lesson: take → drills → recap.</text>
+
+  <rect x="40" y="100" width="200" height="90" rx="14" fill="#141c33" stroke="#223052"/>
+  <text x="140" y="138" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700">Singer</text>
+  <text x="140" y="160" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="12">mic · phrase · drill takes</text>
+
+  <rect x="280" y="90" width="280" height="210" rx="16" fill="#0f1526" stroke="#5eead4"/>
+  <text x="420" y="118" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">WEB APP (React + R3F)</text>
+  <text x="300" y="148" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Pitchy + LPC formants + harmonics</text>
+  <text x="300" y="168" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Melody-relative cents (not nearest note)</text>
+  <text x="300" y="188" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• 3D anatomy you vs target</text>
+  <text x="300" y="208" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Lesson runner (take / 3 drills / recap)</text>
+  <text x="300" y="228" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• POST JSON  event=take|drill|recap</text>
+  <text x="300" y="258" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="11">never sends raw audio</text>
+
+  <path d="M240 145 H280" stroke="#6fb1ff" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M560 145 H620" stroke="#6fb1ff" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M620 250 H560" stroke="#5eead4" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="620" y="90" width="440" height="470" rx="16" fill="#0f1526" stroke="#6fb1ff"/>
+  <text x="840" y="118" text-anchor="middle" fill="#6fb1ff" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">AWS  ·  STRANDS AGENTS  ·  BEDROCK</text>
+  <text x="840" y="138" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="11">FastAPI SSE locally  ·  AgentCore Runtime in production</text>
+
+  <rect x="650" y="160" width="380" height="70" rx="12" fill="#141c33" stroke="#5eead4"/>
+  <text x="840" y="188" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700">Orchestrator  ·  vocal_coach</text>
+  <text x="840" y="210" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="12">model-driven: diagnose · plan · review · remember</text>
+
+  <rect x="650" y="248" width="118" height="64" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="709" y="274" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700">diagnose</text>
+  <text x="709" y="292" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="10">agent-as-tool</text>
+
+  <rect x="778" y="248" width="118" height="64" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="837" y="274" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700">plan drills</text>
+  <text x="837" y="292" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="10">KB ids only</text>
+
+  <rect x="906" y="248" width="124" height="64" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="968" y="274" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700">review drill</text>
+  <text x="968" y="292" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="10">pass / retry / skip</text>
+
+  <rect x="650" y="328" width="380" height="70" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="840" y="356" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">KB + scoring tools</text>
+  <text x="840" y="378" text-anchor="middle" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="11">lookup_technique · get_exercises · score_drill</text>
+
+  <rect x="650" y="414" width="380" height="54" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="840" y="446" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="13">MemoryStore · local JSON + AgentCore Memory</text>
+
+  <rect x="650" y="482" width="380" height="54" rx="12" fill="#141c33" stroke="#223052"/>
+  <text x="840" y="514" text-anchor="middle" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Amazon Bedrock (Claude / Nova) · AgentCore Runtime</text>
+
+  <rect x="280" y="330" width="280" height="230" rx="16" fill="#0f1526" stroke="#34d399"/>
+  <text x="420" y="358" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700">OUTPUT TO SINGER</text>
+  <text x="300" y="388" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Streamed diagnosis (SSE)</text>
+  <text x="300" y="408" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Visible agent tool loop</text>
+  <text x="300" y="428" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• 3 runnable drills with pass criteria</text>
+  <text x="300" y="448" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Verdict: pass / retry / skip</text>
+  <text x="300" y="468" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Last-session memory in the panel</text>
+  <text x="300" y="488" fill="#e8edf7" font-family="Segoe UI, system-ui, sans-serif" font-size="12">• Teacher log download</text>
+  <text x="300" y="528" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Singer only sings — agent runs the lesson</text>
+
+  <text x="40" y="640" fill="#93a0bd" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Repetitive work the agent owns: listen → diagnose → assign drills → score them → remember. The singer decides to sing.</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6fb1ff"/>
+    </marker>
+  </defs>
+</svg>

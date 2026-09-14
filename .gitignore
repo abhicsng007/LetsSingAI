@@ -1,0 +1,23 @@
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+*.log
+
+# Python / agent
+agent/.venv/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+agent/.pytest_cache/
+agent/data/progress.json
+
+# Secrets — never commit real credentials (.env.example is safe to keep)
+.env
+agent/.env
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
