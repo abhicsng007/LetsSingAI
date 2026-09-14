@@ -133,7 +133,9 @@ pytest
 - **Track:** Professional Agents  
 - **License:** Apache-2.0  
 - **Live demo:** https://letssingai-production.up.railway.app/  
-- **Devpost copy, video script, builder.aws drafts:** [SUBMISSION.md](SUBMISSION.md)  
+- **Devpost project details (paste-ready):** [DEVPOST_PROJECT_DETAILS.md](DEVPOST_PROJECT_DETAILS.md)  
+- **builder.aws.com bonus posts (paste-ready):** [BUILDER_AWS_POSTS.md](BUILDER_AWS_POSTS.md)  
+- **Video script, recording checklist:** [SUBMISSION.md](SUBMISSION.md)  
 - **Deploy notes:** [agent/DEPLOY.md](agent/DEPLOY.md)
 
 ## Tech
