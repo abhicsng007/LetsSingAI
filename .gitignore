@@ -16,6 +16,10 @@ agent/data/progress.json
 .env
 agent/.env
 
+# Local Devpost paste files — not for the public repo
+DEVPOST_PROJECT_DETAILS.md
+DEMO_VIDEO_SCRIPT.md
+
 # OS / editors
 .DS_Store
 Thumbs.db
