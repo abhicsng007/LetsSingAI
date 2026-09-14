@@ -8,6 +8,9 @@ Karaoke apps give you a number. Chatbots talk about singing. Neither sits in the
 
 > The 3D anatomy view is an educational model inferred from your voice (pitch, formants, loudness stability). It is not medical imaging.
 
+**Live demo:** [https://letssingai-production.up.railway.app/](https://letssingai-production.up.railway.app/)  
+Chrome, allow the mic. Health: [`/health`](https://letssingai-production.up.railway.app/health) should read `"coach": "bedrock-agent"`.
+
 ![Architecture](docs/architecture.svg)
 
 ## Who it’s for
@@ -116,7 +119,7 @@ docker build -t letssingai-coach .
 # CMD is python runtime.py  → BedrockAgentCoreApp
 ```
 
-A clickable live demo still needs FastAPI (`uvicorn server:app`) plus a static frontend built with `VITE_API_BASE` pointing at that API. See [agent/DEPLOY.md](agent/DEPLOY.md).
+The public demo is one HTTPS origin (UI + `/coach` together). See [agent/DEPLOY.md](agent/DEPLOY.md).
 
 ### Tests (no AWS)
 
@@ -129,6 +132,7 @@ pytest
 
 - **Track:** Professional Agents  
 - **License:** Apache-2.0  
+- **Live demo:** https://letssingai-production.up.railway.app/  
 - **Devpost copy, video script, builder.aws drafts:** [SUBMISSION.md](SUBMISSION.md)  
 - **Deploy notes:** [agent/DEPLOY.md](agent/DEPLOY.md)
 
